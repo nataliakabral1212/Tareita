@@ -12,7 +12,6 @@ Route::get('/clientes',      [ClienteController::class, 'index']);
 Route::get('/clientes/{id}', [ClienteController::class, 'show']);
 Route::post('/clientes',     [ClienteController::class, 'store']);
 
-<<<<<<< Updated upstream
 Route::get('/categorias',      [CategoriaController::class, 'index']);
 Route::get('/categorias/{id}', [CategoriaController::class, 'show']);
 Route::post('/categorias',     [CategoriaController::class, 'store']);
@@ -20,8 +19,3 @@ Route::post('/categorias',     [CategoriaController::class, 'store']);
 Route::get('/servicios',       [ServicioController::class, 'index']);
 Route::get('/servicios/{id}',  [ServicioController::class, 'show']);
 Route::post('/servicios',      [ServicioController::class, 'store']);
-=======
-Route::get('/roles',      [RolController::class, 'index']);
-Route::get('/roles/{id}', [RolController::class, 'show']);
-Route::post('/roles',     [RolController::class, 'store']);
->>>>>>> Stashed changes

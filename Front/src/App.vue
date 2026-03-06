@@ -1,12 +1,24 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import Categorias from './components/Categorias.vue'
+import { useRouter } from 'vue-router'
+import MenuLateral from './components/MenuLateral.vue'
 
-const currentRoute = ref('categorias')
+const router = useRouter()
+const activeRoute = ref('')
+
+function navigate(route: string) {
+  activeRoute.value = route
+  router.push(route)
+}
 </script>
 
 <template>
-  <Categorias @navigate="currentRoute = $event" />
+  <div style="display:flex;width:100%;height:100%;">
+    <MenuLateral :activeRoute="activeRoute" @navigate="navigate" />
+    <div style="flex:1;overflow:auto;">
+      <RouterView />
+    </div>
+  </div>
 </template>
 
 <style>

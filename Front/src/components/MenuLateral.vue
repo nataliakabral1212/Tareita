@@ -42,21 +42,21 @@ defineProps<{
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a5 5 0 1 0 0 10A5 5 0 0 0 12 2z"/><path d="M19 21a7 7 0 0 0-14 0"/><circle cx="19" cy="8" r="3"/><path d="M22 21a3 3 0 0 0-3-3"/></svg>
     Roles
   </a>
-  <a href="#" @click.prevent="emit('navigate', 'clientes')"
+  <a href="#" @click.prevent="emit('navigate', '/clientes')"
     :style="activeRoute === 'clientes'
       ? 'display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;font-size:13px;font-weight:600;color:#7A4E38;text-decoration:none;background:rgba(212,168,176,0.25);'
       : 'display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;font-size:13px;font-weight:500;color:#A896A0;text-decoration:none;'">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
     Clientes
   </a>
-  <a href="#" @click.prevent="emit('navigate', 'categorias')"
+  <a href="#" @click.prevent="emit('navigate', '/categorias')"
     :style="activeRoute === 'categorias'
       ? 'display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;font-size:13px;font-weight:600;color:#7A4E38;text-decoration:none;background:rgba(212,168,176,0.25);'
       : 'display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;font-size:13px;font-weight:500;color:#A896A0;text-decoration:none;'">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
     Categorías
   </a>
-  <a href="#" @click.prevent="emit('navigate', 'servicios')"
+  <a href="#" @click.prevent="emit('navigate', '/servicios')"
     :style="activeRoute === 'servicios'
       ? 'display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;font-size:13px;font-weight:600;color:#7A4E38;text-decoration:none;background:rgba(212,168,176,0.25);'
       : 'display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;font-size:13px;font-weight:500;color:#A896A0;text-decoration:none;'">

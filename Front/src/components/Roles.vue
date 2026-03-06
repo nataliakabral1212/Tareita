@@ -19,7 +19,6 @@ interface RolForm {
 
 const BASE_URL = 'http://127.0.0.1:8000/api'
 
-// ── State ──────────────────────────────────────────────────────
 const roles = ref<Rol[]>([])
 const cargando = ref<boolean>(false)
 const error = ref<string>('')
@@ -30,7 +29,6 @@ const showDeleteModal = ref<boolean>(false)
 const rolAEliminar = ref<Rol | null>(null)
 const selectedRol = ref<Rol | null>(null)
 
-// ── Computed ───────────────────────────────────────────────────
 const rolesFiltrados = computed<Rol[]>(() => {
   if (!busqueda.value) return roles.value
   const t = busqueda.value.toLowerCase()
@@ -39,7 +37,6 @@ const rolesFiltrados = computed<Rol[]>(() => {
   )
 })
 
-// ── API: Cargar roles ─────────────────────────────────────────
 async function cargarRoles(): Promise<void> {
   cargando.value = true
   error.value = ''
@@ -56,7 +53,6 @@ async function cargarRoles(): Promise<void> {
   }
 }
 
-// ── API: Crear rol ────────────────────────────────────────────
 async function crearRol(form: RolForm): Promise<void> {
   const res = await fetch(`${BASE_URL}/roles`, {
     method: 'POST',
@@ -71,7 +67,6 @@ async function crearRol(form: RolForm): Promise<void> {
   roles.value.unshift(data.data)
 }
 
-// ── Methods ────────────────────────────────────────────────────
 function openCrear(): void {
   modalAction.value = 'crear'
   selectedRol.value = null
@@ -161,10 +156,8 @@ onMounted(cargarRoles)
       </svg>
     </div>
 
-    <!-- ── Sidebar ── -->
     <MenuLateral active-route="roles" @navigate="emit('navigate', $event)" />
 
-    <!-- ── Main ── -->
     <main
       style="
         flex: 1;
@@ -177,7 +170,6 @@ onMounted(cargarRoles)
         overflow: hidden;
       "
     >
-      <!-- Topbar -->
       <header
         style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px; flex-wrap: wrap"
       >
@@ -273,7 +265,6 @@ onMounted(cargarRoles)
         </div>
       </header>
 
-      <!-- Error -->
       <div
         v-if="error"
         style="
@@ -289,7 +280,6 @@ onMounted(cargarRoles)
         ⚠️ {{ error }}
       </div>
 
-      <!-- Tabla -->
       <div
         style="
           flex: 1;
@@ -299,7 +289,6 @@ onMounted(cargarRoles)
           overflow: auto;
         "
       >
-        <!-- Loading -->
         <div
           v-if="cargando"
           style="
@@ -324,7 +313,6 @@ onMounted(cargarRoles)
           Cargando roles...
         </div>
 
-        <!-- Empty state -->
         <div
           v-else-if="rolesFiltrados.length === 0"
           style="
